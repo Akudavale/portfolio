@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Abhishek Singh Kudavale - AI/ML Engineer | Portfolio</title>
+    <meta name="description" content="Abhishek Singh Kudavale - AI/ML Engineer specializing in NLP, Computer Vision, Deep Learning, and MLOps. Explore my projects and experience in artificial intelligence.">
+    <meta name="keywords" content="AI Engineer, Machine Learning, Deep Learning, NLP, Computer Vision, PyTorch, TensorFlow, MLOps, Data Science, Abhishek Singh Kudavale">
+    <meta name="author" content="Abhishek Singh Kudavale">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Abhishek Singh Kudavale - AI/ML Engineer">
+    <meta property="og:description" content="Portfolio showcasing AI/ML projects, experience in deep learning, NLP, and computer vision">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Abhishek Singh Kudavale - AI/ML Engineer">
+    <meta name="twitter:description" content="Portfolio showcasing AI/ML projects and experience">
+    <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://rsms.me">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://picsum.photos">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#3b82f6',
+                light: '#60a5fa',
+                dark: '#2563eb',
+              },
+              slate: {
+                950: '#020617',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  
+  <body class="bg-slate-950 text-gray-100 font-sans">
+    
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+      <div class="container mx-auto flex items-center justify-between p-4 md:px-8">
+        <a href="#hero" class="text-2xl font-bold text-primary-light hover:text-primary transition-colors">
+          ASK
+        </a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="#about" class="text-gray-300 hover:text-primary-light transition-colors font-medium">About</a>
+          <a href="#skills" class="text-gray-300 hover:text-primary-light transition-colors font-medium">Skills</a>
+          <a href="#projects" class="text-gray-300 hover:text-primary-light transition-colors font-medium">Projects</a>
+          <a href="#experience" class="text-gray-300 hover:text-primary-light transition-colors font-medium">Experience</a>
+          <a href="#education" class="text-gray-300 hover:text-primary-light transition-colors font-medium">Education</a>
+          <a href="#contact" class="text-gray-300 hover:text-primary-light transition-colors font-medium">Contact</a>
+        </nav>
+        <div class="md:hidden">
+          <button id="mobile-menu-button" class="text-gray-300 hover:text-primary-light focus:outline-none" aria-label="Toggle mobile menu">
+            <svg id="mobile-menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+            <svg id="mobile-menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden bg-slate-900">
+        <nav class="flex flex-col items-center py-4 space-y-4">
+          <a href="#about" class="text-gray-300 hover:text-primary-light transition-colors">About</a>
+          <a href="#skills" class="text-gray-300 hover:text-primary-light transition-colors">Skills</a>
+          <a href="#projects" class="text-gray-300 hover:text-primary-light transition-colors">Projects</a>
+          <a href="#experience" class="text-gray-300 hover:text-primary-light transition-colors">Experience</a>
+          <a href="#education" class="text-gray-300 hover:text-primary-light transition-colors">Education</a>
+          <a href="#contact" class="text-gray-300 hover:text-primary-light transition-colors">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:px-12">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center fade-in-up relative">
+            <div class="absolute inset-0 -z-10 h-full w-full bg-slate-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+            <img src="https://picsum.photos/seed/portfolio-profile/200/200" alt="Abhishek Singh Kudavale profile picture" class="w-40 h-40 rounded-full mb-6 border-4 border-primary-dark shadow-lg shadow-primary/20 profile-img-main">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-2">Abhishek Singh Kudavale</h1>
+            <p class="text-xl md:text-2xl text-primary-light font-medium mb-6">AI / Machine Learning Engineer</p>
+            <p class="max-w-2xl text-gray-300 mb-8 text-lg px-4">
+                I build intelligent systems that solve complex problems. Currently passionate about deep learning, natural language processing, and deploying scalable AI models.
+            </p>
+            <div class="flex items-center space-x-6 mb-8">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-light transition-colors duration-300" aria-label="GitHub Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.013c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.013C22 6.477 17.523 2 12 2z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-light transition-colors duration-300" aria-label="LinkedIn Profile">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                </a>
+            </div>
+            <a href="./resume.pdf" download class="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-300 shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/60">
+                Download Resume
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 sm:py-20 fade-in-up">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-light mb-12">About Me</h2>
+            <div class="max-w-4xl mx-auto text-center text-gray-300 text-lg leading-relaxed">
+                <p class="mb-4">
+                    Hello! I'm an AI/ML Engineer with a deep passion for building intelligent systems that can learn from data. With a strong background in computer science and statistics, I specialize in developing and deploying machine learning models for real-world applications. My expertise spans across Natural Language Processing, Computer Vision, and classical machine learning.
+                </p>
+                <p class="mb-4">
+                    I've had the pleasure of working on end-to-end ML pipelines, from data ingestion and preprocessing to model training, evaluation, and deployment at scale. I am driven by the challenge of translating complex business problems into data-driven solutions and am a firm believer in the principles of MLOps for creating robust and reproducible AI systems.
+                </p>
+                <p>
+                    Outside of work, I'm an avid reader of research papers, a contributor to open-source AI projects, and I enjoy participating in Kaggle competitions. I'm always eager to connect with fellow enthusiasts and explore the next frontier of artificial intelligence.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 sm:py-20 fade-in-up">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-light mb-12">My Tech Stack</h2>
+            <div id="skills-container" class="max-w-6xl mx-auto space-y-10"></div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 sm:py-20 fade-in-up">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-light mb-8">Featured Projects</h2>
+            
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="filter-btn active bg-slate-800 hover:bg-slate-700 text-gray-300 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm" data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-gray-300 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm" data-filter="NLP">
+                    NLP
+                </button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-gray-300 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm" data-filter="Computer Vision">
+                    Computer Vision
+                </button>
+                <button class="filter-btn bg-slate-800 hover:bg-slate-700 text-gray-300 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm" data-filter="MLOps">
+                    MLOps
+                </button>
+            </div>
+            
+            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"></div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-16 sm:py-20 fade-in-up">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-light mb-12">Work Experience</h2>
+            <div class="max-w-4xl mx-auto">
+                <div id="experience-container" class="relative border-l-2 border-slate-700"></div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="py-16 sm:py-20 fade-in-up">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-light mb-12">Education & Certifications</h2>
+            <div class="max-w-4xl mx-auto">
+                <div id="education-container" class="relative border-l-2 border-slate-700"></div>
+            </div>
+            <div class="max-w-4xl mx-auto mt-16">
+                <h3 class="text-2xl sm:text-3xl font-bold text-center text-primary-light/80 mb-10">Certifications</h3>
+                <div id="certifications-container" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 sm:py-20 fade-in-up">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-primary-light mb-12">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-lg text-gray-300 mb-8">
+                    I'm always excited to discuss new research, interesting datasets, or potential collaborations in the AI space. My inbox is always open, so feel free to reach out!
+                </p>
+                <a href="mailto:kudavaleabhisheksingh@gmail.com" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 duration-300 shadow-lg shadow-primary/40 hover:shadow-xl hover:shadow-primary/60">
+                    Say Hello
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-transparent border-t border-slate-800">
+      <div class="container mx-auto py-6 px-6 md:px-12 text-center text-gray-400 flex flex-col sm:flex-row justify-between items-center">
+        <p class="text-sm mb-4 sm:mb-0">&copy; <span id="current-year"></span> Abhishek Singh Kudavale. All Rights Reserved.</p>
+        <div class="flex items-center space-x-6">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-light transition-colors duration-300" aria-label="GitHub Profile">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12.013c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.82c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12.013C22 6.477 17.523 2 12 2z" clip-rule="evenodd"></path></svg>
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-light transition-colors duration-300" aria-label="LinkedIn Profile">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="hidden fixed bottom-8 right-8 bg-primary hover:bg-primary-dark text-white p-3 rounded-full shadow-lg transition-all duration-300 z-40" aria-label="Back to top">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+
+    <!-- Data -->
+    <script src="./js/data.js"></script>
+    <!-- Main Script -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
