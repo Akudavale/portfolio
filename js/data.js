@@ -17,15 +17,15 @@ const skillsData = [
   { name: 'Hugging Face', category: 'Frameworks & Platforms' },
   { name: 'AWS SageMaker', category: 'Frameworks & Platforms' },
   { name: 'Google AI Platform', category: 'Frameworks & Platforms' },
-  { name: 'Azure ML', category: 'Frameworks & Platforms' },
   
   // ML/DL Concepts
   { name: 'Natural Language Processing', category: 'ML/DL Concepts' },
   { name: 'Computer Vision', category: 'ML/DL Concepts' },
   { name: 'Deep Learning', category: 'ML/DL Concepts' },
   { name: 'Reinforcement Learning', category: 'ML/DL Concepts' },
-  { name: 'MLOps', category: 'ML/DL Concepts' },
-  
+    { name: 'Transformers', category: 'ML/DL Concepts' },
+    { name: 'Vision-Language Models', category: 'ML/DL Concepts' },
+
   // Tools & DevOps
   { name: 'Docker', category: 'Tools & DevOps' },
   { name: 'Kubernetes', category: 'Tools & DevOps' },
@@ -37,8 +37,8 @@ const skillsData = [
 // TODO: Replace with your actual projects
 const projectsData = [
   {
-    title: 'Sentiment Analysis Engine',
-    description: 'A deep learning model for classifying text sentiment. Fine-tuned a BERT transformer model on a custom dataset, achieving 95% accuracy.',
+    title: 'Fine-Tuning LLM for Spam Classification',
+    description: ' Understanding the stages of building a Large Language Model. Conversion of words into context vectors in an efficient way using multi-head attention to be fed into the LLM. Fine-tuning a pretrained transformer-based LLM with 4,000+ spam classification examples. Achieved 97.21% and 95.67% accuracy on Training and Test dataset, respectively.',
     tags: ['Python', 'PyTorch', 'NLP', 'Transformers', 'Hugging Face'],
     imageUrl: 'https://picsum.photos/seed/project1/600/400',
     sourceUrl: 'https://github.com/yourusername/sentiment-analysis', // TODO: Update
