@@ -15,7 +15,8 @@ function renderSkills() {
     'Languages & Libraries',
     'Frameworks & Platforms',
     'ML/DL Concepts',
-    'Tools & DevOps'
+    'Tools & DevOps',
+    'IDEs & Editors'
   ];
   
   let html = '';
