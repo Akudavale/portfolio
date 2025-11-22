@@ -64,7 +64,7 @@ const projectsData = [
   },
   {
     title: 'Image Classification Challenge on Custom Dataset',
-    description: 'Trained a custom 8 Christmas classes image dataset on EfficientNet-b4, achieving 98% and 96.20% training and testing accuracy, respectively.. Deployed as a REST API with Docker. Improved optimal performance by conducting fine hyperparameter tuning, scheduling, and regularization strategies. Obtained the highest test accuracy compared to all tested models',
+    description: 'Trained a custom 8 Christmas classes image dataset on EfficientNet-b4, achieving 98% and 96.20% training and testing accuracy, respectively. Deployed as a REST API with Docker. Improved optimal performance by conducting fine hyperparameter tuning, scheduling, and regularization strategies. Obtained the highest test accuracy compared to all tested models',
     tags: ['Pytorch', 'openCV', 'Computer Vision', 'CNNs', 'Data Agumentation'],
     imageUrl: 'images\\projects\\classification.jpeg',
     //liveUrl: 'https://demo.yourproject.com', // TODO: Update
