@@ -108,30 +108,30 @@ const projectsData = [
 // TODO: Update with your actual experience
 const experienceData = [
   {
-    role: ' Master Thesis Student',
+    role: ' AI Research Master Thesis Student',
     company: 'IAV GmbH.',
-    period: 'August 2025 - Present',
+    period: 'MAY 2025 - Present',
     description: [
-      'Develop and deploy a multimodal AI framework.',
-      'Merged CV and VLM outputs to generate scenarios from off highway and agricultural video data.',
-      'Performed prompt engineering to improve VLM outputs and added temporal information to strengthen parameter extraction and scene understanding.',
-      'Worked with a team of four developers to raise productivity and code quality.',
-      'Integrated the full pipeline into a usable workflow with low latency.'
-    ],
+      'Designed an AI framework combining computer vision and vision–language models for automated scenario generation in off-highway environments (IAV Mela).',
+      'Implemented and optimized benchmarked CV models on real-world off-road datasets, improving object detection and localization performance.',
+      'Integrated VLM-based reasoning with CV outputs using prompt optimization and temporal context for enhanced semantic scene understanding.',
+      'Enabled automated scenario extraction and generation through tightly coupled perception and reasoning pipelines.',
+      'Collaborated cross-functionally to deploy a low-latency AWS microservice integrated with CARLA and dSPACE simulators.'
+    ],    
     logoUrl: 'https://picsum.photos/seed/logo1/40/40',
   },
-  {
-    role: ' Workstudent - ML Engineer',
-    company: 'IAV GmbH.',
-    period: 'May 2025 - July 2025',
-    description: [
-      'Researched cybersecurity attack scenarios on vehicles and created experimental plans for a DoE based AI agent.',
-      'Enhanced system resilience by designing tests that target real operational conditions.',
-      'Conducted experiments on test vehicles to validate risk and performance insights.',
-      'Contributed to projects that strengthen the automotive sector digital presence and improve customer engagement.'
-    ],
-    logoUrl: 'https://picsum.photos/seed/logo2/40/40',
-  },
+  // {
+  //   role: ' Workstudent - ML Engineer',
+  //   company: 'IAV GmbH.',
+  //   period: 'May 2025 - July 2025',
+  //   description: [
+  //     'Researched cybersecurity attack scenarios on vehicles and created experimental plans for a DoE based AI agent.',
+  //     'Enhanced system resilience by designing tests that target real operational conditions.',
+  //     'Conducted experiments on test vehicles to validate risk and performance insights.',
+  //     'Contributed to projects that strengthen the automotive sector digital presence and improve customer engagement.'
+  //   ],
+  //   logoUrl: 'https://picsum.photos/seed/logo2/40/40',
+  // },
     {
     role: ' Student Research Assistant',
     company: 'Universität Siegen',
@@ -149,17 +149,17 @@ const experienceData = [
     company: 'Technique Design Group',
     period: 'October 2020 - November 2021',
     description: [
-      'Designed and built 3D models in CATIA V5 and developed functional prototypes.',
-      'Researched and optimized fabrication processes for three projects and managed real world testing.',
-      'Worked with a five member cross functional team to deliver high quality design outputs.',
-      'Coordinated with three clients to support successful project completion.',
+      'Designed and validated 3D models and assemblies in CATIA V5 with a focus on manufacturability and performance.',
+      'Developed and deployed machine learning models (XGBoost, SVM) on edge devices for real-time predictive analysis.',
+      'Integrated ML inference pipelines with custom 3D CAD-based systems.',
+      'Led fabrication workflows and quality control across multiple client projects from concept to delivery.',
+      'Collaborated with cross-functional teams to optimize design processes and improve project outcomes.'
     ],
     logoUrl: 'https://picsum.photos/seed/logo3/40/40',
   },
 ];
 
 // Education Data
-// TODO: Update with your actual education
 const educationData = [
   {
     institution: ' Universität Siegen',
@@ -194,7 +194,7 @@ const certificationData = [
   {
     name: ' Ultimate AWS Certified Cloud Practitioner CLF-C02',
     issuer: 'Udemy',
-    date: 'In progress... Expected December 2025',
+    date: 'In progress... Expected January 2026',
     logoUrl: 'https://picsum.photos/seed/cert3/50/50',
   },
   {
