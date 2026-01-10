@@ -112,11 +112,12 @@ const experienceData = [
     company: 'IAV GmbH.',
     period: 'MAY 2025 - Present',
     description: [
-      'Designed an AI framework combining computer vision and vision–language models for automated scenario generation in off-highway environments (IAV Mela).',
-      'Implemented and optimized benchmarked CV models on real-world off-road datasets, improving object detection and localization performance.',
-      'Integrated VLM-based reasoning with CV outputs using prompt optimization and temporal context for enhanced semantic scene understanding.',
-      'Enabled automated scenario extraction and generation through tightly coupled perception and reasoning pipelines.',
-      'Collaborated cross-functionally to deploy a low-latency AWS microservice integrated with CARLA and dSPACE simulators.'
+      'Designing an AI framework combining computer vision and vision–language models for automated scenario generation in off-highway environments (IAV Mela).',
+      'Implementing and optimizing benchmarked CV models on real-world off-road datasets, improving object detection and localization performance.',
+      'Developing a SaaS-based benchmarking framework to evaluate CV and VLM models across diverse public and private datasets.',
+      'Integrating VLM-based reasoning with CV outputs using prompt optimization and temporal context for enhanced semantic scene understanding.',
+      'Collaborating cross-functionally to deploy a low-latency AWS microservice integrated with CARLA and dSPACE simulators.',
+      'Optimizing scenario extraction through a multi-layer fusion of CV and VLMs, currently tracking a 23% increase in accuracy for object and lane detection tasks compared to internal baselines.'
     ],    
     logoUrl: 'https://picsum.photos/seed/logo1/40/40',
   },
@@ -139,6 +140,7 @@ const experienceData = [
     description: [
       'Integrated deep learning based 6D pose estimation with a Kalman filter for stable motion tracking.',
       'Tuned noise parameters dynamically during training and evaluation to improve estimation quality.',
+      'Developed visualization tools to analyze sensor noise profiles and trajectory deviations, enabling data-driven decisions for algorithm tuning.',
       'Increased model performance by 22.88 percent through algorithm refinement and real IMU data processing.',
       'Achieved Grade 1.0 for the project.'
     ],
@@ -194,7 +196,7 @@ const certificationData = [
   {
     name: ' Ultimate AWS Certified Cloud Practitioner CLF-C02',
     issuer: 'Udemy',
-    date: 'In progress... Expected January 2026',
+    date: 'January 2026',
     logoUrl: 'https://picsum.photos/seed/cert3/50/50',
   },
   {
