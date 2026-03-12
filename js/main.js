@@ -51,59 +51,66 @@ function renderProjects(filter = 'all') {
   let filteredProjects = projectsData;
   if (filter !== 'all') {
     filteredProjects = projectsData.filter(project =>
+      (project.category && project.category === filter) ||
       project.tags.some(tag => tag.includes(filter))
     );
   }
-  
-  // Generate HTML
-  container.innerHTML = filteredProjects.map(project => `
-    <div class="project-card bg-slate-900 rounded-lg overflow-hidden transition-all duration-300 transform hover:-translate-y-2 group p-0.5 bg-gradient-to-br from-white/10 to-transparent" data-tags="${project.tags.join(',')}">
-      <div class="bg-slate-900 rounded-md h-full p-6 flex flex-col">
-        <img 
-          src="${project.imageUrl}" 
-          alt="${project.title}" 
-          class="w-full h-56 object-cover rounded-md mb-6 project-img" 
-          onload="this.classList.add('loaded')"
-          loading="lazy"
-        />
-        <h3 class="text-2xl font-bold text-white mb-3">${project.title}</h3>
-        <p class="text-gray-400 mb-4 flex-grow">${project.description}</p>
-        <div class="flex flex-wrap gap-2 mb-6">
-          ${project.tags.map(tag => `
-            <span class="bg-primary/10 text-primary-light text-xs font-semibold px-3 py-1 rounded-full">${tag}</span>
-          `).join('')}
-        </div>
-        <div class="mt-auto flex items-center space-x-4">
-          ${project.liveUrl ? `
-            <a 
-              href="${project.liveUrl}" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="text-primary-light hover:text-primary font-semibold flex items-center transition-colors"
-            >
-              Live Demo 
-              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-              </svg>
-            </a>
-          ` : ''}
-          ${project.sourceUrl ? `
-            <a 
-              href="${project.sourceUrl}" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="text-primary-light hover:text-primary font-semibold flex items-center transition-colors"
-            >
-              Source Code 
-              <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l-4 4-4 4M6 16l-4-4 4-4"></path>
-              </svg>
-            </a>
-          ` : ''}
+
+  function renderProjectCard(project) {
+    return `
+      <div class="project-card bg-slate-900 rounded-lg overflow-hidden transition-all duration-300 transform hover:-translate-y-2 group p-0.5 bg-gradient-to-br from-white/10 to-transparent" data-tags="${project.tags.join(',')}">
+        <div class="bg-slate-900 rounded-md h-full p-6 flex flex-col">
+          <div class="project-media w-full rounded-md mb-6 overflow-hidden bg-slate-950/40 ring-1 ring-white/10">
+            <img 
+              src="${project.imageUrl}" 
+              alt="${project.title}" 
+              class="w-full h-full object-cover project-img" 
+              onload="this.classList.add('loaded')"
+              loading="lazy"
+            />
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-3">${project.title}</h3>
+          <p class="text-gray-400 mb-4 flex-grow">${project.description}</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            ${project.tags.map((tag, i) => `
+              <span class="project-tag-chip bg-primary/10 text-primary-light text-xs font-semibold px-3 py-1 rounded-full" style="--chip-delay: ${i * 45}ms">${tag}</span>
+            `).join('')}
+          </div>
+          <div class="mt-auto flex items-center space-x-4">
+            ${project.liveUrl ? `
+              <a 
+                href="${project.liveUrl}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-primary-light hover:text-primary font-semibold flex items-center transition-colors"
+              >
+                Live Demo 
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            ` : ''}
+            ${project.sourceUrl ? `
+              <a 
+                href="${project.sourceUrl}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="text-primary-light hover:text-primary font-semibold flex items-center transition-colors"
+              >
+                Source Code 
+                <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l-4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+              </a>
+            ` : ''}
+          </div>
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }
+
+  container.innerHTML = filteredProjects.map(renderProjectCard).join('');
+  triggerProjectChipAnimations({ force: filter !== 'all' });
 }
 
 /**
@@ -270,6 +277,12 @@ function initScrollAnimations() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+
+          // Kick off project tag animations when Projects becomes visible.
+          if (entry.target && entry.target.id === 'projects') {
+            triggerProjectChipAnimations({ force: true });
+          }
+
           observer.unobserve(entry.target);
         }
       });
@@ -283,6 +296,85 @@ function initScrollAnimations() {
   document.querySelectorAll('.fade-in-up').forEach(el => {
     observer.observe(el);
   });
+}
+
+/**
+ * Trigger project tag chip animations.
+ * Uses a class toggle so initial render doesn't animate offscreen.
+ */
+function triggerProjectChipAnimations({ force = false } = {}) {
+  const container = document.getElementById('projects-container');
+  if (!container) return;
+
+  const projectsSection = document.getElementById('projects');
+  const shouldAnimate =
+    force || (projectsSection && projectsSection.classList.contains('visible'));
+
+  if (!shouldAnimate) return;
+
+  // Next frame ensures the browser sees the pre-animation state.
+  requestAnimationFrame(() => {
+    container.querySelectorAll('.project-tag-chip').forEach(chip => {
+      chip.classList.add('chip-animate');
+    });
+  });
+}
+
+/**
+ * Initialize Scroll Spy for Active Nav Highlighting
+ */
+function initScrollSpy() {
+  const sectionIds = ['about', 'skills', 'projects', 'experience', 'education', 'contact'];
+  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+  const heroSection = document.getElementById('hero');
+  const navLinks = Array.from(document.querySelectorAll('a.nav-link[href^="#"]'));
+
+  if (!sections.length || !navLinks.length) return;
+
+  function setActiveSection(activeId) {
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href') || '';
+      const isActive = !!activeId && href === `#${activeId}`;
+
+      link.classList.toggle('is-active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visible && visible.target && visible.target.id) {
+        setActiveSection(visible.target.id);
+      }
+    },
+    {
+      threshold: [0.2, 0.35, 0.5, 0.65],
+      rootMargin: '-20% 0px -55% 0px',
+    }
+  );
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+  if (heroSection) {
+    const heroObserver = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting && entry.intersectionRatio > 0.6) {
+          setActiveSection(null);
+        }
+      },
+      { threshold: [0.6] }
+    );
+    heroObserver.observe(heroSection);
+  }
 }
 
 /**
@@ -353,6 +445,7 @@ function init() {
   initMobileMenu();
   initSmoothScrolling();
   initScrollAnimations();
+  initScrollSpy();
   initProfileImageLoading();
   initProjectFiltering();
   

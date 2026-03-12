@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#020617"/>
+      <stop offset="1" stop-color="#1b1f3a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="32%" cy="30%" r="60%">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ddd6fe" stop-opacity="0.10"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="410" cy="220" r="320" fill="url(#glow)" filter="url(#soft)"/>
+
+  <g opacity="0.26" stroke="#e5e7eb" stroke-width="5" stroke-linecap="round">
+    <path d="M430 640 C 520 510, 560 420, 595 340"/>
+    <path d="M770 640 C 670 510, 625 420, 605 340"/>
+  </g>
+
+  <g opacity="0.18" stroke="#94a3b8" stroke-width="2">
+    <path d="M180 500 C 300 420, 380 410, 500 330"/>
+    <path d="M500 330 C 640 250, 770 250, 920 220"/>
+    <path d="M500 330 C 660 390, 800 450, 990 520"/>
+  </g>
+
+  <g fill="#0f172a" stroke="#1f334e" stroke-width="2">
+    <circle cx="180" cy="500" r="18"/>
+    <circle cx="500" cy="330" r="18"/>
+    <circle cx="920" cy="220" r="18"/>
+    <circle cx="990" cy="520" r="18"/>
+  </g>
+
+  <g font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+    <text x="80" y="150" fill="#e5e7eb" font-size="50" font-weight="700">Lane Line Detection</text>
+    <text x="80" y="205" fill="#c4b5fd" font-size="24" font-weight="600">Real-Time CV Pipeline</text>
+
+    <rect x="80" y="255" width="1040" height="1.5" fill="#1f2937" opacity="0.8"/>
+
+    <g fill="#e5e7eb" font-size="18" font-weight="600">
+      <rect x="80" y="295" rx="14" ry="14" width="110" height="38" fill="url(#chip)" stroke="#4c1d95"/>
+      <text x="104" y="320">OpenCV</text>
+
+      <rect x="204" y="295" rx="14" ry="14" width="160" height="38" fill="url(#chip)" stroke="#4c1d95"/>
+      <text x="228" y="320">Canny + Hough</text>
+
+      <rect x="378" y="295" rx="14" ry="14" width="170" height="38" fill="url(#chip)" stroke="#4c1d95"/>
+      <text x="402" y="320">Data Processing</text>
+
+      <rect x="562" y="295" rx="14" ry="14" width="190" height="38" fill="url(#chip)" stroke="#4c1d95"/>
+      <text x="586" y="320">Embedded Systems</text>
+
+      <rect x="766" y="295" rx="14" ry="14" width="120" height="38" fill="url(#chip)" stroke="#4c1d95"/>
+      <text x="790" y="320">IoU 82%</text>
+    </g>
+
+    <g fill="#cbd5e1" font-size="18" font-weight="500" opacity="0.9">
+      <text x="80" y="410">Gaussian smoothing, edge detection, line extraction</text>
+      <text x="80" y="450">Optimized for real-time performance</text>
+      <text x="80" y="510">Lane detection: 82% IoU</text>
+    </g>
+  </g>
+</svg>
